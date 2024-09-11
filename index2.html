@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Profile - Tech Innovators</title>
+    <style>
+        /* General Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
+            font-family: 'Arial', sans-serif;
+        }
+
+        header p {
+            margin-top: 0;
+            font-size: 1.2rem;
+        }
+
+        /* Main Container */
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+
+        /* Profile Section Styles */
+        .profile {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+
+        .profile-image {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            margin-right: 1rem;
+        }
+
+        .profile-info {
+            flex: 1;
+        }
+
+        .profile-info h2 {
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .profile-info ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .profile-info ul li {
+            margin: 0.5rem 0;
+        }
+
+        .profile-info a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .profile-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Team Section Styles */
+        .team {
+            margin: 2rem 0;
+        }
+
+        .team h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .team-member {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+
+        .team-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-right: 1rem;
+        }
+
+        .team-info h3 {
+            margin: 0.5rem 0;
+        }
+
+        .team-info p {
+            margin: 0.5rem 0;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Tech Innovators</h1>
+            <p>Innovating the Future of Technology</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="profile">
+            <img src="data:image/jpeg;base64,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" alt="Tech Innovators Office" class="profile-image">
+            <div class="profile-info">
+                <h2>About Us</h2>
+                <p>Tech Innovators is a leading technology solutions provider specializing in advanced software development, IT consulting, and digital transformation. Our mission is to deliver cutting-edge solutions that drive innovation and business growth.</p>
+                <ul>
+                    <li><strong>Founded:</strong> 2010</li>
+                    <li><strong>Headquarters:</strong> Silicon Valley, CA</li>
+                    <li><strong>Employees:</strong> 500+</li>
+                    <li><strong>Website:</strong> <a href="https://www.techinnovators.com" target="_blank">www.techinnovators.com</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="team">
+            <h2>Meet Our Team</h2>
+            <div class="team-member">
+                <img src="https://pbs.twimg.com/profile_images/1657015934899597312/kuV4EJIh_400x400.jpg" alt="Chinmay Chaudhari" class="team-photo">
+                <div class="team-info">
+                    <h3>Chinmay Chaudhari</h3>
+                    <p><strong>CEO</strong></p>
+                    <p>Chinmay is a visionary leader with over 20 years of experience in the tech industry. Under his leadership, Tech Innovators has grown rapidly and achieved numerous milestones.</p>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="https://pbs.twimg.com/profile_images/1659252078928330753/QmYYuSup_400x400.jpg" alt="Sai Ram" class="team-photo">
+                <div class="team-info">
+                    <h3>Sai Ram</h3>
+                    <p><strong>CTO</strong></p>
+                    <p>Sai is an expert in technology and innovation, responsible for overseeing the development of our cutting-edge solutions. Her technical expertise is key to our success.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Tech Innovators. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
